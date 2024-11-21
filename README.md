@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# HTML to PPTX Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React app that converts HTML content into PowerPoint presentations (`.pptx`) using the `PptxGenJS` library. This app allows you to input HTML content, which is then parsed and converted into a PowerPoint presentation with separate slides for each section.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Convert HTML content with headings, paragraphs, images, and tables to PowerPoint slides.
+- Automatically handles HTML content and generates corresponding slides.
+- Includes an interactive interface for pasting HTML or typing content.
+- Button becomes disabled if the HTML content is invalid or empty.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- PptxGenJS library (for PowerPoint generation)
+- HTML and CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To set up the project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-repo/html-to-pptx-converter.git
+    cd html-to-pptx-converter
+    ```
 
-### `npm run build`
+2. **Install the dependencies**:
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Start the development server**:
+    ```bash
+    npm start
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    The app will be available at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. **Enter your HTML content**:
+    - You can directly type or paste your HTML content into the textarea.
+    - The content must be valid HTML (including `<h1>`, `<p>`, `<table>`, and other tags).
+  
+2. **Convert to PowerPoint**:
+    - Click the **Convert to PPTX** button to generate the `.pptx` file from the HTML content.
+    - The application will automatically create a slide for each section of content (e.g., a new slide for each `<hr>` tag).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Paste content**:
+    - If you have HTML content in your clipboard, use the **Paste** button to automatically insert it into the textarea.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Button states**:
+    - The **Convert to PPTX** button will be disabled if the content is empty or invalid HTML.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How it Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app uses the [PptxGenJS](https://gitbrent.github.io/PptxGenJS/docs/html-to-powerpoint/) library to generate PowerPoint presentations from HTML content. It parses the HTML and adds content (like headings, paragraphs, tables, and images) to the slides. Each section of content separated by an `<hr>` tag is added to a new slide.
 
-## Learn More
+### Supported HTML Tags
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **`<h1>`, `<h2>`, `<h3>`, ...**: These are converted to slide titles.
+- **`<p>`**: Paragraphs are converted to text boxes on slides.
+- **`<table>`**: Tables are converted to tables in the PowerPoint slides.
+- **`<img>`**: Images are inserted into the slides.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Known Limitations
 
-### Code Splitting
+- The app only supports basic HTML elements like text, headings, images, and tables.
+- Complex HTML features like forms, scripts, or advanced CSS are not supported.
+- Styles are not fully replicated from HTML to the PowerPoint slides (only basic ones like color, font size).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Dependencies
 
-### Analyzing the Bundle Size
+- [React](https://reactjs.org/)
+- [PptxGenJS](https://gitbrent.github.io/PptxGenJS/docs/html-to-powerpoint/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Installation of PptxGenJS
 
-### Making a Progressive Web App
+To include the PptxGenJS library in your project, run the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install pptxgenjs
