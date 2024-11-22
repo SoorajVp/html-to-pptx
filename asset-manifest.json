@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/html-to-pptx/static/css/main.22c4f8af.css",
+    "main.js": "/html-to-pptx/static/js/main.ac4f6483.js",
+    "static/js/453.3c713d37.chunk.js": "/html-to-pptx/static/js/453.3c713d37.chunk.js",
+    "index.html": "/html-to-pptx/index.html",
+    "main.22c4f8af.css.map": "/html-to-pptx/static/css/main.22c4f8af.css.map",
+    "main.ac4f6483.js.map": "/html-to-pptx/static/js/main.ac4f6483.js.map",
+    "453.3c713d37.chunk.js.map": "/html-to-pptx/static/js/453.3c713d37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22c4f8af.css",
+    "static/js/main.ac4f6483.js"
+  ]
+}
