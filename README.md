@@ -9,6 +9,10 @@ A simple React app that converts HTML content into PowerPoint presentations (`.p
 - Includes an interactive interface for pasting HTML or typing content.
 - Button becomes disabled if the HTML content is invalid or empty.
 
+## Live Preview
+
+🎉 [Live Preview](https://soorajvp.github.io/html-to-pptx/) - Try out the app in your browser!
+
 ## Technologies
 
 - React.js
