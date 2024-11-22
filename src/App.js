@@ -107,7 +107,7 @@ function App() {
 
     setDisabled(!content || !isValidHtml);
   };
-  
+
   const handleChange = (event) => {
     const newHtmlContent = event.target.value;
     setHtmlContent(newHtmlContent);
@@ -124,47 +124,35 @@ function App() {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", backgroundColor: "#edece8" }}>
-      <div style={{ textAlign: "center" }}>
-        <h1 style={{ textAlign: "center", marginBottom: "10px" }}>HTML to PPTX Converter</h1>
-        <p style={{ textAlign: "center", fontSize: "12px", color: "#555", marginBottom: "20px" }}>
-          Paste your HTML content below or type manually. <br /> Click "Convert to PPTX" to download as PowerPoint presentation.
+    <div className="container">
+      <div className="content">
+        <h1 className="title">HTML to PPTX Converter</h1>
+        <p className="subtitle">
+          Paste your HTML content below or type manually. <br /> Click "Convert
+          to PPTX" to download as PowerPoint presentation.
         </p>
-        <div style={{ display: "flex", justifyContent: "end", width: "100%" }}>
-          <button
-            onClick={handlePaste}
-            style={{
-              backgroundColor: "#6d6e6d",
-              color: "#fff",
-              border: "none",
-              padding: "5px 10px",
-              fontSize: "12px",
-              cursor: "pointer",
-            }}
-          >
-            Paste
-          </button>
+        <div className="textarea-container">
+          <div className="textarea-header">
+            <p className="textarea-label">HTML</p>
+            <button className="paste-button" onClick={handlePaste}>
+              Paste
+            </button>
+          </div>
+          <textarea
+            rows={Math.min(Math.max(htmlContent.split('\n').length, 1), 10)}
+            cols="70"
+            placeholder="Enter your HTML content here..."
+            value={htmlContent}
+            onChange={handleChange}
+            className="textarea"
+          ></textarea>
         </div>
-        <textarea
-          rows={Math.min(Math.max(htmlContent.split("\n").length, 1), 10)}
-          cols="60"
-          placeholder="Enter your HTML content here..."
-          value={htmlContent}
-          onChange={handleChange}
-          style={{ width: "97%", padding: "10px", marginBottom: "10px", fontSize: "12px" }}
-        ></textarea>
+        <p className="note">Note: Only the content inside the body tag will be converted.</p>
+
         <button
           onClick={handleConvertToPptx}
           disabled={disabled}
-          style={{
-            color: "#fff",
-            border: "none",
-            padding: "10px 20px",
-            fontSize: "16px",
-            borderRadius: "5px",
-            backgroundColor: disabled ? "#449dfc" : "#007bff",
-            cursor: disabled ? "not-allowed" : "pointer",
-          }}
+          className={`convert-button ${disabled ? 'disabled' : ''}`}
         >
           Convert to PPTX
         </button>

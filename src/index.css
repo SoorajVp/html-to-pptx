@@ -11,3 +11,89 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* General container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #edece8;
+}
+
+.content {
+  text-align: center;
+}
+
+/* Title and subtitle styles */
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.note {
+  margin: 1px 0 15px;
+  font-size: 11px;
+  color: #555;
+  text-align: center;
+}
+
+/* Textarea container styles */
+.textarea-container {
+  border: 2px solid #a1a1a1;
+  /* margin-bottom: 10px; */
+}
+
+.textarea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textarea-label {
+  line-height: 1;
+  color: #545454;
+  font-size: 12px;
+  margin: 0;
+  padding-left: 0.5rem;
+}
+
+.paste-button {
+  background-color: #6d6e6d;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Textarea styling */
+.textarea {
+  padding: 10px;
+  font-size: 12px;
+  outline: none;
+  border: none;
+}
+
+/* Convert button styling */
+.convert-button {
+  color: #fff;
+  border: 1px solid #292a2a;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.convert-button.disabled {
+  background-color: #449dfc;
+  cursor: not-allowed;
+}
