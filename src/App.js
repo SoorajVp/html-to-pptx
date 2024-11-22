@@ -58,7 +58,6 @@ function App() {
         if (img && img.src) {
           try {
             const base64Path = await convertImageToBase64(img.src);
-            console.log("await convertImageToBase64 ", base64Path)
             slide.addImage({
               data: base64Path,
               x: 1,
