@@ -87,7 +87,11 @@ code {
 .convert-button {
   color: #fff;
   border: 1px solid #292a2a;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 35px;
   font-size: 14px;
   background-color: #007bff;
   cursor: pointer;
